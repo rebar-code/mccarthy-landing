@@ -64,21 +64,21 @@
 			</div>
 			
 			<!-- Transition Text -->
-			<div class="transition-section" in:fade={{ duration: 1000, delay: 400 }}>
+			<div class="transition-section" in:fade={{ duration: 1000, delay: 1200 }}>
 				<h1 class="main-heading">
 					<span class="transition-text" aria-label="is now">is now</span>
 				</h1>
 			</div>
 			
 			<!-- M-One Logo (Bottom) -->
-			<div class="logo-section" in:fade={{ duration: 1000, delay: 600 }}>
+			<div class="logo-section" in:fade={{ duration: 1000, delay: 2000 }}>
 				<div class="logo-wrapper new-logo" aria-label="M-One Capital logo">
 					<MOneLogo />
 				</div>
 			</div>
 			
 			<!-- Call to Action -->
-			<div class="cta-section" in:fly={{ y: 30, duration: 600, delay: 800 }}>
+			<div class="cta-section" in:fly={{ y: 30, duration: 600, delay: 2800 }}>
 				<button 
 					class="visit-button" 
 					onclick={handleClick}
@@ -193,16 +193,16 @@
 		width: 100%;
 		display: flex;
 		justify-content: center;
-		margin: 2rem 0;
+		margin: 1.5rem 0;
 	}
 	
 	.logo-wrapper {
-		width: 400px;
-		height: 200px;
+		width: 200px;
+		height: 100px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		transition: transform 0.3s ease;
+		transition: all 0.3s ease;
 		filter: drop-shadow(0 8px 32px rgba(108, 141, 200, 0.15));
 	}
 	
@@ -220,7 +220,7 @@
 	
 	/* Transition section */
 	.transition-section {
-		margin: 3rem 0;
+		margin: 2rem 0;
 		text-align: center;
 	}
 	
@@ -229,30 +229,32 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 1rem;
+		gap: 0.5rem;
 	}
 	
 	.company-name {
 		font-family: adobe-caslon-pro, serif;
-		font-size: 3.5rem;
+		font-size: 1.6rem;
 		font-weight: 400;
 		color: rgb(108, 141, 200);
 		text-shadow: 0 2px 4px rgba(108, 141, 200, 0.1);
-		line-height: 1.2;
+		line-height: 1.1;
+		transition: font-size 0.3s ease;
 	}
 	
 	.transition-text {
 		font-family: 'Playfair Display', serif;
-		font-size: 2rem;
+		font-size: 1rem;
 		font-weight: 300;
 		color: rgba(108, 141, 200, 0.7);
 		font-style: italic;
 		margin: 0.5rem 0;
+		transition: font-size 0.3s ease;
 	}
 	
 	/* Call to action */
 	.cta-section {
-		margin-top: 3rem;
+		margin-top: 2rem;
 	}
 	
 	.visit-button {
@@ -312,55 +314,23 @@
 		transition: transform 0.3s ease;
 	}
 	
-	/* Responsive design */
-	@media (max-width: 1024px) {
+	/* Responsive design - Mobile First Approach */
+	@media (min-width: 321px) {
 		.logo-wrapper {
-			width: 350px;
-			height: 175px;
+			width: 220px;
+			height: 110px;
 		}
 		
 		.company-name {
-			font-size: 3rem;
-		}
-		
-		.transition-text {
 			font-size: 1.8rem;
 		}
-	}
-	
-	@media (max-width: 768px) {
-		.container {
-			padding: 1rem;
-		}
-		
-		.content-wrapper {
-			padding: 1.5rem;
-		}
-		
-		.logo-wrapper {
-			width: 300px;
-			height: 150px;
-		}
-		
-		.company-name {
-			font-size: 2.5rem;
-		}
 		
 		.transition-text {
-			font-size: 1.5rem;
-		}
-		
-		.visit-button {
-			font-size: 1.2rem;
-			padding: 1rem 2.5rem;
-		}
-		
-		.transition-section {
-			margin: 2rem 0;
+			font-size: 1.1rem;
 		}
 	}
 	
-	@media (max-width: 640px) {
+	@media (min-width: 481px) {
 		.logo-wrapper {
 			width: 280px;
 			height: 140px;
@@ -371,31 +341,11 @@
 		}
 		
 		.transition-text {
-			font-size: 1.3rem;
+			font-size: 1.4rem;
 		}
 		
-		.main-heading {
-			gap: 0.8rem;
-		}
-	}
-	
-	@media (max-width: 480px) {
-		.logo-wrapper {
-			width: 250px;
-			height: 125px;
-		}
-		
-		.company-name {
-			font-size: 1.8rem;
-		}
-		
-		.transition-text {
-			font-size: 1.1rem;
-		}
-		
-		.visit-button {
-			font-size: 1rem;
-			padding: 0.9rem 2rem;
+		.logo-section {
+			margin: 1.2rem 0;
 		}
 		
 		.transition-section {
@@ -403,27 +353,130 @@
 		}
 		
 		.cta-section {
+			margin-top: 1.5rem;
+		}
+	}
+	
+	@media (min-width: 769px) {
+		.container {
+			padding: 1rem;
+		}
+		
+		.content-wrapper {
+			padding: 1.5rem;
+			height: auto;
+			justify-content: center;
+		}
+		
+		.logo-wrapper {
+			width: 350px;
+			height: 175px;
+		}
+		
+		.company-name {
+			font-size: 2.8rem;
+		}
+		
+		.transition-text {
+			font-size: 1.7rem;
+		}
+		
+		.logo-section {
+			margin: 1.5rem 0;
+		}
+		
+		.transition-section {
+			margin: 2rem 0;
+		}
+		
+		.cta-section {
 			margin-top: 2rem;
 		}
 	}
 	
-	@media (max-width: 360px) {
+	@media (min-width: 1025px) {
+		.container {
+			padding: 2rem;
+		}
+		
+		.content-wrapper {
+			padding: 2rem;
+		}
+		
 		.logo-wrapper {
-			width: 220px;
-			height: 110px;
+			width: 400px;
+			height: 200px;
 		}
 		
 		.company-name {
-			font-size: 1.6rem;
+			font-size: 3.5rem;
 		}
 		
 		.transition-text {
-			font-size: 1rem;
+			font-size: 2rem;
+		}
+		
+		.logo-section {
+			margin: 1.5rem 0;
+		}
+		
+		.transition-section {
+			margin: 2rem 0;
+		}
+		
+		.cta-section {
+			margin-top: 2rem;
+		}
+	}
+	
+	/* Mobile-specific adjustments */
+	@media (max-width: 480px) {
+		.container {
+			padding: 0.3rem;
+			min-height: 100vh;
+		}
+		
+		.content-wrapper {
+			padding: 0.5rem;
+			height: 100vh;
+			justify-content: space-around;
 		}
 		
 		.visit-button {
 			font-size: 0.9rem;
-			padding: 0.8rem 1.8rem;
+			padding: 0.7rem 1.8rem;
+		}
+		
+		.logo-section {
+			margin: 0.4rem 0;
+		}
+		
+		.transition-section {
+			margin: 0.6rem 0;
+		}
+		
+		.cta-section {
+			margin-top: 0.8rem;
+		}
+	}
+	
+	@media (max-width: 320px) {
+		.logo-wrapper {
+			width: 180px;
+			height: 90px;
+		}
+		
+		.company-name {
+			font-size: 1.4rem;
+		}
+		
+		.transition-text {
+			font-size: 0.9rem;
+		}
+		
+		.visit-button {
+			font-size: 0.75rem;
+			padding: 0.5rem 1.3rem;
 		}
 	}
 	
